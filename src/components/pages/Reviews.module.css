@@ -1,0 +1,36 @@
+.container {
+  background-color: #0C0C0D;
+  color: white;
+  padding: 20px;
+}
+.backLink {
+  color: #BF3604;
+  text-decoration: none;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+
+.title {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.reviewList {
+  list-style: none;
+  padding: 0;
+}
+
+.reviewItem {
+  margin-bottom: 20px;
+}
+
+.author {
+  font-size: 18px;
+  font-weight: bold;
+  color: #BF3604;
+}
+
+.content {
+  font-size: 16px;
+}

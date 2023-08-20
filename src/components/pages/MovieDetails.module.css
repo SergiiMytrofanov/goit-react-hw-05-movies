@@ -1,0 +1,51 @@
+.container {
+  padding: 20px;
+  background-color: #0C0C0D;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.backLink {
+  color: #BF3604;
+  text-decoration: none;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.overview {
+  margin-bottom: 16px;
+}
+
+.poster {
+  width: 250px;
+  height: auto;
+  margin-bottom: 16px;
+}
+
+.link {
+  color: #BF3604;
+  text-decoration: none;
+  margin-right: 16px;
+}
+
+.link:last-child {
+  margin-right: 0;
+}
+.linksContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+
+.link {
+  color: #BF3604;
+  text-decoration: none;
+  margin-bottom: 8px;
+}

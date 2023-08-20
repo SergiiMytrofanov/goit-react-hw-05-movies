@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+import styles from './Reviews.module.css';
 
 const Reviews = () => {
   const { movieId } = useParams();
@@ -20,13 +21,16 @@ const Reviews = () => {
   }, [movieId]);
 
   return (
-    <div>
-      <h2>Reviews</h2>
-      <ul>
+    <div className={styles.container}>
+    <Link to={`/movies/${movieId}`} className={styles.backLink}>
+        Back
+      </Link>
+      <h2 className={styles.title}>Reviews</h2>
+      <ul className={styles.reviewList}>
         {reviews.map(review => (
-          <li key={review.id}>
-            <p>Author: {review.author}</p>
-            <p>{review.content}</p>
+          <li className={styles.reviewItem} key={review.id}>
+            <p className={styles.author}>Author: {review.author}</p>
+            <p className={styles.content}>{review.content}</p>
           </li>
         ))}
       </ul>

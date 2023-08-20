@@ -1,0 +1,29 @@
+.container {
+  padding: 20px;
+  background-color: #0C0C0D;
+  color: white;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.list {
+  margin-left: 15px;
+  padding: 0;
+}
+
+.item {
+  margin-bottom: 8px;
+}
+
+.link {
+  color: #BF3604;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.link:hover {
+  color: #8C1C03;
+}

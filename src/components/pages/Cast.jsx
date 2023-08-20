@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+import styles from './Cast.module.css';
 
 const defaultImg = 'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700';
 
@@ -22,18 +23,22 @@ const Cast = () => {
   }, [movieId]);
 
   return (
-    <div>
-      <h2>Cast</h2>
-      <ul>
+    <div className={styles.container}>
+      <Link to={`/movies/${movieId}`} className={styles.backLink}>
+        Back
+      </Link>
+      <h2 className={styles.title}>Cast</h2>
+      <ul className={styles.castList}>
         {cast.map(actor => (
-          <li key={actor.id}>
+          <li className={styles.castItem} key={actor.id}>
             <img
+              className={styles.actorImage}
               src={actor.profile_path ? `https://image.tmdb.org/t/p/w500/${actor.profile_path}` : defaultImg}
               alt={actor.name}
               width={100}
               height={150}
             />
-            {actor.name}
+            <span className={styles.actorName}>{actor.name}</span>
           </li>
         ))}
       </ul>

@@ -5,17 +5,22 @@ import Movies from './pages/Movies';
 import MovieDetails from './pages/MovieDetails';
 import Cast from './pages/Cast';
 import Reviews from './pages/Reviews';
+import styles from './App.module.css';
 
 const App = () => {
   return (
-    <div>
-      <nav>
-        <ul>
+    <div className={styles.container}>
+      <nav className={styles.navBar}>
+        <ul className={styles.navList}>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/" className={styles.navLink}>
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/movies">Movies</Link>
+            <Link to="/movies" className={styles.navLink}>
+              Movies
+            </Link>
           </li>
         </ul>
       </nav>

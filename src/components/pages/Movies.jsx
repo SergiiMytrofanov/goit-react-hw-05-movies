@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import MoviesList from '../MoviesList/MoviesList';
 import SearchForm from '../SearchForm/SearchForm';
+import styles from './Movies.module.css';
 
 const apiKey = 'a4690865d7bdab2d42080cd491b22b8d';
 
@@ -27,8 +28,8 @@ const Movies = () => {
   }, []);
 
   return (
-    <div>
-      <h2>Search Movies</h2>
+    <div className={styles.container}>
+      <h2 className={styles.title}>Search Movies</h2>
       <SearchForm onSubmit={handleSubmit} />
       <MoviesList movies={searchResults} />
     </div>

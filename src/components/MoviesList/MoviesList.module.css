@@ -1,0 +1,18 @@
+.list {
+    padding: 0;
+}
+
+.item {
+  margin-left: 20px;
+  margin-bottom: 8px;
+}
+
+.link {
+  color: #BF3604;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.link:hover {
+  color: #8C1C03;
+}
