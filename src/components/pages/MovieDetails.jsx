@@ -17,9 +17,13 @@ const MovieDetails = () => {
 
   return (
     <div>
-      <h2>{movieData.title}</h2>
+       <Link to={backLink}>Back</Link>
+
+       <h2>{movieData.title}</h2>
       <p>{movieData.overview}</p>
-      <Link to={backLink}>Back</Link>
+
+
+
       <img
         src={
           movieData.poster_path
@@ -29,6 +33,8 @@ const MovieDetails = () => {
         width={250}
         alt="poster"
       />
+      <Link to={`/movies/${movieId}/cast`}>Cast</Link>
+      <Link to={`/movies/${movieId}/reviews`}>Reviews</Link>
     </div>
   );
 };
