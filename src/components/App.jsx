@@ -1,4 +1,4 @@
-import React, { lazy } from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Route, Routes, Link } from 'react-router-dom';
 import styles from './App.module.css';
 
@@ -10,48 +10,30 @@ const Reviews = lazy(() => import('./pages/Reviews'));
 
 const App = () => {
   return (
-    <div className={styles.container}>
-      <nav className={styles.navBar}>
+    <div className={styles.appContainer}>
+      <nav>
         <ul className={styles.navList}>
-          <li>
+          <li className={styles.navItem}>
             <Link to="/" className={styles.navLink}>
               Home
             </Link>
           </li>
-          <li>
+          <li className={styles.navItem}>
             <Link to="/movies" className={styles.navLink}>
               Movies
             </Link>
           </li>
         </ul>
       </nav>
-      <Routes>
-        <Route path="/" element={(
-          <React.Suspense fallback={<div>Loading...</div>}>
-            <Home />
-          </React.Suspense>
-        )} />
-        <Route path="/movies" element={(
-          <React.Suspense fallback={<div>Loading...</div>}>
-            <Movies />
-          </React.Suspense>
-        )} />
-        <Route path="/movies/:movieId" element={(
-          <React.Suspense fallback={<div>Loading...</div>}>
-            <MovieDetails />
-          </React.Suspense>
-        )} />
-        <Route path="/movies/:movieId/cast" element={(
-          <React.Suspense fallback={<div>Loading...</div>}>
-            <Cast />
-          </React.Suspense>
-        )} />
-        <Route path="/movies/:movieId/reviews" element={(
-          <React.Suspense fallback={<div>Loading...</div>}>
-            <Reviews />
-          </React.Suspense>
-        )} />
-      </Routes>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/movies/:movieId" element={<MovieDetails />} />
+          <Route path="/movies/:movieId/cast" element={<Cast />} />
+          <Route path="/movies/:movieId/reviews" element={<Reviews />} />
+        </Routes>
+      </Suspense>
     </div>
   );
 };
